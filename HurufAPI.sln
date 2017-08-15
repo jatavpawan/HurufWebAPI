@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HurufAPI", "HurufAPI\HurufAPI.csproj", "{DD372729-8A56-43C3-9E87-442209357841}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Huruf.BAL", "Huruf.BAL\Huruf.BAL.csproj", "{C2B9C2EB-3074-424B-9649-1521EE19B0D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Huruf.DAL", "Huruf.DAL\Huruf.DAL.csproj", "{B140C29A-43B4-4D82-B69F-DA43F7453A44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD372729-8A56-43C3-9E87-442209357841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD372729-8A56-43C3-9E87-442209357841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD372729-8A56-43C3-9E87-442209357841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD372729-8A56-43C3-9E87-442209357841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2B9C2EB-3074-424B-9649-1521EE19B0D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B9C2EB-3074-424B-9649-1521EE19B0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B9C2EB-3074-424B-9649-1521EE19B0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2B9C2EB-3074-424B-9649-1521EE19B0D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B140C29A-43B4-4D82-B69F-DA43F7453A44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B140C29A-43B4-4D82-B69F-DA43F7453A44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B140C29A-43B4-4D82-B69F-DA43F7453A44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B140C29A-43B4-4D82-B69F-DA43F7453A44}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

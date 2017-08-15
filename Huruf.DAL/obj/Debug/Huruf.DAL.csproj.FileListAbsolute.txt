@@ -1,0 +1,10 @@
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Debug\Huruf.DAL.dll.config
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Debug\Huruf.DAL.dll
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Debug\Huruf.DAL.pdb
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Debug\EntityFramework.dll
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Debug\EntityFramework.xml
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\GULAM_Work\HurufAPI\Huruf.DAL\obj\Debug\Huruf.DAL.csprojResolveAssemblyReference.cache
+E:\GULAM_Work\HurufAPI\Huruf.DAL\obj\Debug\Huruf.DAL.dll
+E:\GULAM_Work\HurufAPI\Huruf.DAL\obj\Debug\Huruf.DAL.pdb

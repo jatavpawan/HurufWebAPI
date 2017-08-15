@@ -1,0 +1,9 @@
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Release\Huruf.DAL.dll.config
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Release\Huruf.DAL.dll
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Release\Huruf.DAL.pdb
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Release\EntityFramework.dll
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Release\EntityFramework.SqlServer.dll
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Release\EntityFramework.xml
+E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Release\EntityFramework.SqlServer.xml
+E:\GULAM_Work\HurufAPI\Huruf.DAL\obj\Release\Huruf.DAL.dll
+E:\GULAM_Work\HurufAPI\Huruf.DAL\obj\Release\Huruf.DAL.pdb
