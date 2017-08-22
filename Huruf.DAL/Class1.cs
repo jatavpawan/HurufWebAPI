@@ -45,11 +45,11 @@ namespace Huruf.DAL
         public List<UserDataRegister> Userinfo { get; set; }
     }
 
-    public partial class UserRegister
-    {
-        public byte[] FileName { get; set; }
-        public string FilePathName { get; set; }
-    }
+    //public partial class UserRegister
+    //{
+    //    public byte[] FileName { get; set; }
+    //    public string FilePathName { get; set; }
+    //}
 
     public partial class ChangeUserPassword
     {

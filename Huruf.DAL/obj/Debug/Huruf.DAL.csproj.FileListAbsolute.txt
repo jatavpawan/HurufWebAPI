@@ -8,3 +8,12 @@ E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Debug\EntityFramework.SqlServer.xml
 E:\GULAM_Work\HurufAPI\Huruf.DAL\obj\Debug\Huruf.DAL.csprojResolveAssemblyReference.cache
 E:\GULAM_Work\HurufAPI\Huruf.DAL\obj\Debug\Huruf.DAL.dll
 E:\GULAM_Work\HurufAPI\Huruf.DAL\obj\Debug\Huruf.DAL.pdb
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Debug\Huruf.DAL.dll.config
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Debug\Huruf.DAL.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Debug\Huruf.DAL.pdb
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Debug\EntityFramework.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Debug\EntityFramework.xml
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\obj\Debug\Huruf.DAL.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\obj\Debug\Huruf.DAL.pdb

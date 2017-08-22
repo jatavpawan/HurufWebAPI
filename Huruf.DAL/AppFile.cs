@@ -13,13 +13,28 @@ namespace Huruf.DAL
 {
 
 using System;
+    using System.Collections.Generic;
     
-public partial class GetBlogList_Result
+public partial class AppFile
 {
 
-    public int BlogID { get; set; }
+    public int AppFileID { get; set; }
 
-    public string FilePathName { get; set; }
+    public string Title { get; set; }
+
+    public string FileURL { get; set; }
+
+    public string Description { get; set; }
+
+    public int FileType { get; set; }
+
+    public int FileCategory { get; set; }
+
+    public Nullable<bool> IsDownloaded { get; set; }
+
+    public int CreatedBy { get; set; }
+
+    public Nullable<System.DateTime> Timestamp { get; set; }
 
 }
 

@@ -1,75 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="GmContextModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="C__MigrationHistory">
-    <Key>
-      <PropertyRef Name="MigrationId" />
-      <PropertyRef Name="ContextKey" />
-    </Key>
-    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
-  <EntityType Name="AddBlogs">
-    <Key>
-      <PropertyRef Name="BlogId" />
-    </Key>
-    <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserID" Type="Int32" Nullable="false" />
-    <Property Name="CategoryID" Type="Int32" Nullable="false" />
-    <Property Name="textContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PrivacyID" Type="Int32" Nullable="false" />
-    <Property Name="UserLikes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="BlogComments">
-    <Key>
-      <PropertyRef Name="CommentId" />
-    </Key>
-    <Property Name="CommentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BlogId" Type="Int32" Nullable="false" />
-    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="UserID" Type="Int32" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="BlogDocuments">
-    <Key>
-      <PropertyRef Name="DocumentId" />
-    </Key>
-    <Property Name="DocumentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BlogId" Type="Int32" Nullable="false" />
-    <Property Name="FileID" Type="Int32" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="Category">
-    <Key>
-      <PropertyRef Name="CategoryID" />
-    </Key>
-    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CategoryName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="CatOrderBy" Type="Int32" Nullable="false" />
-    <Property Name="CatClassName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="FileSettings">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FileType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="SourceID" Type="Int32" Nullable="false" />
-    <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="PrivacyType">
-    <Key>
-      <PropertyRef Name="PrivacyID" />
-    </Key>
-    <Property Name="PrivacyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PrivacyTypeName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PrivacyOrderBy" Type="Int32" Nullable="false" />
-  </EntityType>
   <EntityType Name="UserRegister">
     <Key>
       <PropertyRef Name="RegistrationID" />
@@ -82,18 +12,11 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="FileId" Type="Int32" Nullable="false" />
     <Property Name="GCMId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="IsNotification" Type="Boolean" />
+    <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityContainer Name="GmContext" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
-    <EntitySet Name="AddBlogs" EntityType="Self.AddBlogs" />
-    <EntitySet Name="BlogComments" EntityType="Self.BlogComments" />
-    <EntitySet Name="BlogDocuments" EntityType="Self.BlogDocuments" />
-    <EntitySet Name="Category" EntityType="Self.Category" />
-    <EntitySet Name="FileSettings" EntityType="Self.FileSettings" />
-    <EntitySet Name="PrivacyType" EntityType="Self.PrivacyType" />
     <EntitySet Name="UserRegister" EntityType="Self.UserRegister" />
     <FunctionImport Name="DeleteBlog">
       <Parameter Name="BlogID" Mode="In" Type="Int32" />

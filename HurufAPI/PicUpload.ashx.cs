@@ -38,7 +38,7 @@ namespace HurufAPI
                 string[] keys = context.Request.Form.AllKeys;
                 ServiceController s = new ServiceController();
 
-                UserDataRegister ur = new UserDataRegister();
+                UserRegister ur = new UserRegister();
                 ur.RegistrationID = int.Parse(context.Request.Form["RegistrationID"] != null ? context.Request.Form["RegistrationID"] : "0");
                 ur.FirstName = context.Request.Form["FirstName"];
                 ur.LastName = context.Request.Form["LastName"];
@@ -46,14 +46,8 @@ namespace HurufAPI
                 ur.UserName = context.Request.Form["UserName"];
                 ur.Password = context.Request.Form["Password"];
                 ur.Mobile = context.Request.Form["Mobile"];
-                ur.FilePathName = filename;
+                ur.FileName = filename;
 
-                byte[] fileData = null;
-                using (var binaryReader = new BinaryReader(context.Request.InputStream))
-                {
-                    fileData = binaryReader.ReadBytes(context.Request.Files[0].ContentLength);
-                }
-                ur.FileName = fileData;
                 s.RegisterUser(ur);
                 Huruf.BAL.Repository.ResizeImage ri = new Huruf.BAL.Repository.ResizeImage();
                 string base64 = ri.SaveImage(context.Request.Files[0].InputStream, 250, 250, "Uploads/ProfilePic", context, filename);
@@ -65,7 +59,6 @@ namespace HurufAPI
                 context.Response.Write("Error: " + ex.Message);
             }
         }
-
 
         public bool IsReusable
         {
