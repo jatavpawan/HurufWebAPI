@@ -10,3 +10,9 @@ HurufAPI/obj
 HurufAPI/bin
 
 
+PublishHuruf/bin/HurufAPI.pdb
+PublishHuruf/bin/Huruf.DAL.pdb
+PublishHuruf/bin/Huruf.BAL.pdb
+PublishHuruf/bin/Antlr3.Runtime.pdb
+.vs/config/applicationhost.config
+.vs/HurufAPI/v14/.suo
