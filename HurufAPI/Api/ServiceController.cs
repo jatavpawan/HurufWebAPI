@@ -31,7 +31,6 @@ namespace HurufAPI.Api
                             obj.CreateDate = DateTime.Now;
                             if (obj.RegistrationID > 0)
                             {
-                                obj = _o.GetListBySelector(z => z.RegistrationID == obj.RegistrationID).FirstOrDefault();
                                 ur = _o.Update(obj);
                             }
                             else
@@ -119,6 +118,69 @@ namespace HurufAPI.Api
 
         }
 
+        [HttpPost]
+        [Route("ChangePassword")]
+        public ReturnValues ChangePassword(ChangeUserPassword obj)
+        {
+            try
+            {
+                ReturnValues result = null;
+                if (obj != null)
+                {
+                    using (RepsistoryEF<UserRegister> _o = new RepsistoryEF<UserRegister>())
+                    {
+                        var resultValue = _o.GetListBySelector(z => z.RegistrationID == obj.RegistrationID).FirstOrDefault();
+
+                        if (resultValue != null)
+                        {
+                            if (resultValue.Password == obj.OldPassword)
+                            {
+                                resultValue.Password = obj.NewPassword;
+                                _o.Update(resultValue);
+                                result = new ReturnValues
+                                {
+                                    Success = "Password Changed Successfully",
+                                    Source = resultValue.RegistrationID.ToString(),
+                                };
+                            }
+                            else
+                            {
+                                result = new ReturnValues
+                                {
+                                    Success = "Old password is not correct.<br/>Please try again.",
+                                    Source = resultValue.RegistrationID.ToString(),
+                                };
+                            }
+                        }
+                        else
+                        {
+                            result = new ReturnValues
+                            {
+                                Success = "Password could not be changed.",
+                                Source = "0",
+                            };
+                        }
+                    }
+
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                ReturnValues objex = new ReturnValues
+                {
+                    Failure = ex.Message,
+
+                };
+                throw ex;
+            }
+            finally
+            {
+
+            }
+
+        }
+
         [HttpGet]
         [Route("GetUserInfo")]
         public UserRegister GetUserInfo(int UserID)
@@ -156,49 +218,46 @@ namespace HurufAPI.Api
         [Route("SaveUserFile")]
         public ReturnValues SaveUserFile(AppFile obj)
         {
-            try
+            using (TransactionScope trans = new TransactionScope())
             {
-                ReturnValues result = null;
-                using (RepsistoryEF<UserRegister> _o = new RepsistoryEF<UserRegister>())
+                try
                 {
-                    var resultValue = _o.GetListBySelector(z => z.UserName == obj.UserName.Trim() && z.Password == obj.Password.Trim()).FirstOrDefault();
-
-                    if (resultValue != null)
+                    ReturnValues ret = null;
+                    using (RepsistoryEF<AppFile> _o = new RepsistoryEF<AppFile>())
                     {
-                        if (obj.GCMId != null && obj.GCMId != string.Empty)
+                        var result = _o.Save(obj);
+                        if (result != null)
                         {
-                            resultValue.GCMId = obj.GCMId;
-                            _o.Update(resultValue);
+                            ret = new ReturnValues
+                            {
+                                Success = "File has been saved.",
+                                Source = "0",
+                            };
                         }
-                        result = new ReturnValues
+                        else
                         {
-                            Success = "Login Successfully",
-                            Source = resultValue.RegistrationID.ToString(),
-                        };
+                            ret = new ReturnValues
+                            {
+                                Success = "Failed to save",
+                                Source = "0",
+                            };
+                        }
                     }
-                    else
-                    {
-                        result = new ReturnValues
-                        {
-                            Success = "Login Failed, Please enter correct username and password",
-                            Source = "0",
-                        };
-                    }
+                    return ret;
                 }
-                return result;
-            }
-            catch (Exception ex)
-            {
-                ReturnValues objex = new ReturnValues
+                catch (Exception ex)
                 {
-                    Failure = ex.Message,
-
-                };
-                throw ex;
-            }
-            finally
-            {
-
+                    trans.Dispose();
+                    ReturnValues objex = new ReturnValues
+                    {
+                        Failure = ex.Message,
+                    };
+                    throw ex;
+                }
+                finally
+                {
+                    trans.Dispose();
+                }
             }
         }
     }

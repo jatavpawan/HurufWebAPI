@@ -30,26 +30,6 @@ namespace Huruf.DAL
     #endregion
 
 
-    public partial class AddBlogData
-    {
-
-        public int BlogId { get; set; }
-        public int UserID { get; set; }
-        public int CategoryID { get; set; }
-        public string textContent { get; set; }
-        public System.DateTime CreatedDate { get; set; }
-        public System.DateTime UpdatedDate { get; set; }
-        public int PrivacyID { get; set; }
-        public string UserLikes { get; set; }
-        public List<string> Fileinfo { get; set; }
-        public List<UserDataRegister> Userinfo { get; set; }
-    }
-
-    //public partial class UserRegister
-    //{
-    //    public byte[] FileName { get; set; }
-    //    public string FilePathName { get; set; }
-    //}
 
     public partial class ChangeUserPassword
     {
