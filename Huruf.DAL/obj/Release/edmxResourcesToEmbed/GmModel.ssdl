@@ -1,74 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="GmContextModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="__MigrationHistory">
+<Schema Namespace="GmContextModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'gulam786_Huruf.dbo.AppFile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AppFile">
     <Key>
-      <PropertyRef Name="MigrationId" />
-      <PropertyRef Name="ContextKey" />
+      <PropertyRef Name="AppFileID" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="FileURL" />
+      <PropertyRef Name="FileType" />
+      <PropertyRef Name="FileCategory" />
+      <PropertyRef Name="CreatedBy" />
     </Key>
-    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
-    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
-    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
-    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="AddBlogs">
-    <Key>
-      <PropertyRef Name="BlogId" />
-    </Key>
-    <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserID" Type="int" Nullable="false" />
-    <Property Name="CategoryID" Type="int" Nullable="false" />
-    <Property Name="textContent" Type="nvarchar(max)" />
-    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
-    <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
-    <Property Name="PrivacyID" Type="int" Nullable="false" />
-    <Property Name="UserLikes" Type="nvarchar(max)" />
-  </EntityType>
-  <EntityType Name="BlogComments">
-    <Key>
-      <PropertyRef Name="CommentId" />
-    </Key>
-    <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="BlogId" Type="int" Nullable="false" />
-    <Property Name="Comment" Type="nvarchar(max)" />
-    <Property Name="UserID" Type="int" Nullable="false" />
-    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="BlogDocuments">
-    <Key>
-      <PropertyRef Name="DocumentId" />
-    </Key>
-    <Property Name="DocumentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="BlogId" Type="int" Nullable="false" />
-    <Property Name="FileID" Type="int" Nullable="false" />
-    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Category">
-    <Key>
-      <PropertyRef Name="CategoryID" />
-    </Key>
-    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CategoryName" Type="varchar" MaxLength="150" />
-    <Property Name="CreateDate" Type="datetime" Nullable="false" />
-    <Property Name="CatOrderBy" Type="int" Nullable="false" />
-    <Property Name="CatClassName" Type="nvarchar(max)" />
-  </EntityType>
-  <EntityType Name="FileSettings">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FileType" Type="nvarchar(max)" />
-    <Property Name="SourceID" Type="int" Nullable="false" />
-    <Property Name="FilePath" Type="varchar(max)" />
-  </EntityType>
-  <EntityType Name="PrivacyType">
-    <Key>
-      <PropertyRef Name="PrivacyID" />
-    </Key>
-    <Property Name="PrivacyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PrivacyTypeName" Type="varchar" MaxLength="150" />
-    <Property Name="CreateDate" Type="datetime" Nullable="false" />
-    <Property Name="PrivacyOrderBy" Type="int" Nullable="false" />
+    <Property Name="AppFileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="FileURL" Type="varchar(max)" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="FileType" Type="int" Nullable="false" />
+    <Property Name="FileCategory" Type="int" Nullable="false" />
+    <Property Name="IsDownloaded" Type="bit" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="Timestamp" Type="datetime" />
   </EntityType>
   <EntityType Name="UserRegister">
     <Key>
@@ -82,25 +33,24 @@
     <Property Name="Password" Type="varchar" MaxLength="50" />
     <Property Name="Mobile" Type="nvarchar(max)" />
     <Property Name="CreateDate" Type="datetime" Nullable="false" />
-    <Property Name="FileId" Type="int" Nullable="false" />
     <Property Name="GCMId" Type="text" />
     <Property Name="IsNotification" Type="bit" />
+    <Property Name="FileName" Type="varchar" MaxLength="500" />
   </EntityType>
-  <Function Name="DeleteBlog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SmartWebDB786">
-    <Parameter Name="BlogID" Type="int" Mode="In" />
-  </Function>
-  <Function Name="GetBlogList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SmartWebDB786">
-    <Parameter Name="CategoryID" Type="int" Mode="In" />
-    <Parameter Name="BlogID" Type="int" Mode="In" />
-  </Function>
   <EntityContainer Name="GmContextModelStoreContainer">
-    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="AddBlogs" EntityType="Self.AddBlogs" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="BlogComments" EntityType="Self.BlogComments" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="BlogDocuments" EntityType="Self.BlogDocuments" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="FileSettings" EntityType="Self.FileSettings" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PrivacyType" EntityType="Self.PrivacyType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRegister" EntityType="Self.UserRegister" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AppFile" EntityType="Self.AppFile" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AppFile].[AppFileID] AS [AppFileID], 
+    [AppFile].[Title] AS [Title], 
+    [AppFile].[FileURL] AS [FileURL], 
+    [AppFile].[Description] AS [Description], 
+    [AppFile].[FileType] AS [FileType], 
+    [AppFile].[FileCategory] AS [FileCategory], 
+    [AppFile].[IsDownloaded] AS [IsDownloaded], 
+    [AppFile].[CreatedBy] AS [CreatedBy], 
+    [AppFile].[Timestamp] AS [Timestamp]
+    FROM [dbo].[AppFile] AS [AppFile]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

@@ -230,7 +230,7 @@ namespace HurufAPI.Api
                         {
                             ret = new ReturnValues
                             {
-                                Success = "File has been saved.",
+                                Success = "File has been saved successfully.",
                                 Source = "0",
                             };
                         }

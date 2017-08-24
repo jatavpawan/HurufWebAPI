@@ -1,85 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="GmContextModelStoreContainer" CdmEntityContainer="GmContext">
-    <EntitySetMapping Name="C__MigrationHistory">
-      <EntityTypeMapping TypeName="GmContextModel.C__MigrationHistory">
-        <MappingFragment StoreEntitySet="__MigrationHistory">
-          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
-          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
-          <ScalarProperty Name="Model" ColumnName="Model" />
-          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="AddBlogs">
-      <EntityTypeMapping TypeName="GmContextModel.AddBlogs">
-        <MappingFragment StoreEntitySet="AddBlogs">
-          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-          <ScalarProperty Name="textContent" ColumnName="textContent" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
-          <ScalarProperty Name="PrivacyID" ColumnName="PrivacyID" />
-          <ScalarProperty Name="UserLikes" ColumnName="UserLikes" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BlogComments">
-      <EntityTypeMapping TypeName="GmContextModel.BlogComments">
-        <MappingFragment StoreEntitySet="BlogComments">
-          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
-          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
-          <ScalarProperty Name="Comment" ColumnName="Comment" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BlogDocuments">
-      <EntityTypeMapping TypeName="GmContextModel.BlogDocuments">
-        <MappingFragment StoreEntitySet="BlogDocuments">
-          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
-          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
-          <ScalarProperty Name="FileID" ColumnName="FileID" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Category">
-      <EntityTypeMapping TypeName="GmContextModel.Category">
-        <MappingFragment StoreEntitySet="Category">
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="CatOrderBy" ColumnName="CatOrderBy" />
-          <ScalarProperty Name="CatClassName" ColumnName="CatClassName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="FileSettings">
-      <EntityTypeMapping TypeName="GmContextModel.FileSettings">
-        <MappingFragment StoreEntitySet="FileSettings">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FileType" ColumnName="FileType" />
-          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
-          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PrivacyType">
-      <EntityTypeMapping TypeName="GmContextModel.PrivacyType">
-        <MappingFragment StoreEntitySet="PrivacyType">
-          <ScalarProperty Name="PrivacyID" ColumnName="PrivacyID" />
-          <ScalarProperty Name="PrivacyTypeName" ColumnName="PrivacyTypeName" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="PrivacyOrderBy" ColumnName="PrivacyOrderBy" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="UserRegister">
       <EntityTypeMapping TypeName="GmContextModel.UserRegister">
         <MappingFragment StoreEntitySet="UserRegister">
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
           <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -88,20 +13,25 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Mobile" ColumnName="Mobile" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="FileId" ColumnName="FileId" />
           <ScalarProperty Name="GCMId" ColumnName="GCMId" />
           <ScalarProperty Name="IsNotification" ColumnName="IsNotification" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="DeleteBlog" FunctionName="GmContextModel.Store.DeleteBlog" />
-    <FunctionImportMapping FunctionImportName="GetBlogList" FunctionName="GmContextModel.Store.GetBlogList">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="GmContextModel.GetBlogList_Result">
-          <ScalarProperty Name="BlogID" ColumnName="BlogID" />
-          <ScalarProperty Name="FilePathName" ColumnName="FilePathName" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
+    <EntitySetMapping Name="AppFile">
+      <EntityTypeMapping TypeName="GmContextModel.AppFile">
+        <MappingFragment StoreEntitySet="AppFile">
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+          <ScalarProperty Name="FileCategory" ColumnName="FileCategory" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="AppFileID" ColumnName="AppFileID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

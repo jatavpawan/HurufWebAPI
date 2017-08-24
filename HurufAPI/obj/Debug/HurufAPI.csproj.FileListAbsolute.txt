@@ -38,6 +38,7 @@ E:\GULAM_Work\HurufAPI\HurufAPI\bin\Antlr3.Runtime.pdb
 E:\GULAM_Work\HurufAPI\HurufAPI\obj\Debug\HurufAPI.csprojResolveAssemblyReference.cache
 E:\GULAM_Work\HurufAPI\HurufAPI\obj\Debug\HurufAPI.dll
 E:\GULAM_Work\HurufAPI\HurufAPI\obj\Debug\HurufAPI.pdb
+D:\Ajay\IO-Ajay\HurufWebAPI\HurufAPI\obj\Debug\HurufAPI.csprojResolveAssemblyReference.cache
 D:\Ajay\IO-Ajay\HurufWebAPI\HurufAPI\bin\HurufAPI.dll.config
 D:\Ajay\IO-Ajay\HurufWebAPI\HurufAPI\bin\HurufAPI.dll
 D:\Ajay\IO-Ajay\HurufWebAPI\HurufAPI\bin\HurufAPI.pdb
@@ -75,6 +76,5 @@ D:\Ajay\IO-Ajay\HurufWebAPI\HurufAPI\bin\System.Web.WebPages.xml
 D:\Ajay\IO-Ajay\HurufWebAPI\HurufAPI\bin\System.Web.WebPages.Deployment.xml
 D:\Ajay\IO-Ajay\HurufWebAPI\HurufAPI\bin\System.Web.WebPages.Razor.xml
 D:\Ajay\IO-Ajay\HurufWebAPI\HurufAPI\bin\Antlr3.Runtime.pdb
-D:\Ajay\IO-Ajay\HurufWebAPI\HurufAPI\obj\Debug\HurufAPI.csprojResolveAssemblyReference.cache
 D:\Ajay\IO-Ajay\HurufWebAPI\HurufAPI\obj\Debug\HurufAPI.dll
 D:\Ajay\IO-Ajay\HurufWebAPI\HurufAPI\obj\Debug\HurufAPI.pdb

@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="2d130b840f9948e4a9ccb9b69acf066d" Name="Diagram1">
         <EntityTypeShape EntityType="GmContextModel.UserRegister" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="GmContextModel.AppFile" Width="1.5" PointX="2.25" PointY="0.5" />
+        <EntityTypeShape EntityType="GmContextModel.AppFile" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

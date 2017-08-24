@@ -7,3 +7,12 @@ E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Release\EntityFramework.xml
 E:\GULAM_Work\HurufAPI\Huruf.DAL\bin\Release\EntityFramework.SqlServer.xml
 E:\GULAM_Work\HurufAPI\Huruf.DAL\obj\Release\Huruf.DAL.dll
 E:\GULAM_Work\HurufAPI\Huruf.DAL\obj\Release\Huruf.DAL.pdb
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Release\Huruf.DAL.dll.config
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Release\Huruf.DAL.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Release\Huruf.DAL.pdb
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Release\EntityFramework.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Release\EntityFramework.SqlServer.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Release\EntityFramework.xml
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Release\EntityFramework.SqlServer.xml
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\obj\Release\Huruf.DAL.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\obj\Release\Huruf.DAL.pdb

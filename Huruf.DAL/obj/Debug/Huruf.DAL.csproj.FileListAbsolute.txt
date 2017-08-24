@@ -17,3 +17,4 @@ D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Debug\EntityFramework.xml
 D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\bin\Debug\EntityFramework.SqlServer.xml
 D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\obj\Debug\Huruf.DAL.dll
 D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\obj\Debug\Huruf.DAL.pdb
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.DAL\obj\Debug\Huruf.DAL.csprojResolveAssemblyReference.cache

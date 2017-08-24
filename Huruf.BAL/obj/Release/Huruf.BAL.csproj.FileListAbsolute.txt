@@ -10,3 +10,15 @@ E:\GULAM_Work\HurufAPI\Huruf.BAL\bin\Release\EntityFramework.SqlServer.xml
 E:\GULAM_Work\HurufAPI\Huruf.BAL\obj\Release\Huruf.BAL.csprojResolveAssemblyReference.cache
 E:\GULAM_Work\HurufAPI\Huruf.BAL\obj\Release\Huruf.BAL.dll
 E:\GULAM_Work\HurufAPI\Huruf.BAL\obj\Release\Huruf.BAL.pdb
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\bin\Release\Huruf.BAL.dll.config
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\bin\Release\Huruf.BAL.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\bin\Release\Huruf.BAL.pdb
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\bin\Release\EntityFramework.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\bin\Release\EntityFramework.SqlServer.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\bin\Release\Huruf.DAL.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\bin\Release\Huruf.DAL.pdb
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\bin\Release\EntityFramework.xml
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\bin\Release\EntityFramework.SqlServer.xml
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\obj\Release\Huruf.BAL.csprojResolveAssemblyReference.cache
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\obj\Release\Huruf.BAL.dll
+D:\Ajay\IO-Ajay\HurufWebAPI\Huruf.BAL\obj\Release\Huruf.BAL.pdb
