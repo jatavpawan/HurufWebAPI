@@ -52,9 +52,6 @@
       <DependentUpon>GmModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="GetBlogList_Result.cs">
-      <DependentUpon>GmModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="GmModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,13 +73,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="GmModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GmModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="GmModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GmModel.edmx</DependentUpon>

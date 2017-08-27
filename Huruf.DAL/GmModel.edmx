@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="GmContextModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="gulam786_HurufModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AppFile">
           <Key>
             <PropertyRef Name="AppFileID" />
@@ -35,14 +35,29 @@
           <Property Name="IsNotification" Type="bit" />
           <Property Name="FileName" Type="varchar" MaxLength="500" />
         </EntityType>
-        <EntityContainer Name="GmContextModelStoreContainer">
+        <EntityContainer Name="gulam786_HurufModelStoreContainer">
           <EntitySet Name="AppFile" EntityType="Self.AppFile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRegister" EntityType="Self.UserRegister" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="GmContextModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="gulam786_HurufModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AppFile">
+          <Key>
+            <PropertyRef Name="AppFileID" />
+          </Key>
+          <Property Name="AppFileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FileURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FileType" Type="Int32" Nullable="false" />
+          <Property Name="FileCategory" Type="Int32" Nullable="false" />
+          <Property Name="IsDownloaded" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+        </EntityType>
         <EntityType Name="UserRegister">
           <Key>
             <PropertyRef Name="RegistrationID" />
@@ -59,45 +74,34 @@
           <Property Name="IsNotification" Type="Boolean" />
           <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="GmContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="UserRegister" EntityType="Self.UserRegister" />
-          <FunctionImport Name="DeleteBlog">
-            <Parameter Name="BlogID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="GetBlogList" ReturnType="Collection(GmContextModel.GetBlogList_Result)">
-            <Parameter Name="CategoryID" Mode="In" Type="Int32" />
-            <Parameter Name="BlogID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <EntitySet Name="AppFile" EntityType="GmContextModel.AppFile" />
+        <EntityContainer Name="gulam786_HurufEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AppFiles" EntityType="Self.AppFile" />
+          <EntitySet Name="UserRegisters" EntityType="Self.UserRegister" />
         </EntityContainer>
-        <ComplexType Name="GetBlogList_Result">
-          <Property Type="Int32" Name="BlogID" Nullable="false" />
-          <Property Type="String" Name="FilePathName" Nullable="true" />
-        </ComplexType>
-        <EntityType Name="AppFile">
-          <Key>
-            <PropertyRef Name="AppFileID" />
-          </Key>
-          <Property Name="AppFileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="FileURL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="FileType" Type="Int32" Nullable="false" />
-          <Property Name="FileCategory" Type="Int32" Nullable="false" />
-          <Property Name="IsDownloaded" Type="Boolean" />
-          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
-          <Property Name="Timestamp" Type="DateTime" Precision="3" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="GmContextModelStoreContainer" CdmEntityContainer="GmContext">
-          <EntitySetMapping Name="UserRegister">
-            <EntityTypeMapping TypeName="GmContextModel.UserRegister">
+        <EntityContainerMapping StorageEntityContainer="gulam786_HurufModelStoreContainer" CdmEntityContainer="gulam786_HurufEntities">
+          <EntitySetMapping Name="AppFiles">
+            <EntityTypeMapping TypeName="gulam786_HurufModel.AppFile">
+              <MappingFragment StoreEntitySet="AppFile">
+                <ScalarProperty Name="AppFileID" ColumnName="AppFileID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="FileCategory" ColumnName="FileCategory" />
+                <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRegisters">
+            <EntityTypeMapping TypeName="gulam786_HurufModel.UserRegister">
               <MappingFragment StoreEntitySet="UserRegister">
-                <ScalarProperty Name="FileName" ColumnName="FileName" />
                 <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -108,25 +112,11 @@
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="GCMId" ColumnName="GCMId" />
                 <ScalarProperty Name="IsNotification" ColumnName="IsNotification" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="AppFile">
-            <EntityTypeMapping TypeName="GmContextModel.AppFile">
-              <MappingFragment StoreEntitySet="AppFile">
-                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
-                <ScalarProperty Name="FileCategory" ColumnName="FileCategory" />
-                <ScalarProperty Name="FileType" ColumnName="FileType" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="FileURL" ColumnName="FileURL" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="AppFileID" ColumnName="AppFileID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          </EntityContainerMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -140,7 +130,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

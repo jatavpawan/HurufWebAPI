@@ -1,15 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="GmContextModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'gulam786_Huruf.dbo.AppFile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+<Schema Namespace="gulam786_HurufModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="AppFile">
     <Key>
       <PropertyRef Name="AppFileID" />
-      <PropertyRef Name="Title" />
-      <PropertyRef Name="FileURL" />
-      <PropertyRef Name="FileType" />
-      <PropertyRef Name="FileCategory" />
-      <PropertyRef Name="CreatedBy" />
     </Key>
     <Property Name="AppFileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="varchar" MaxLength="200" Nullable="false" />
@@ -37,20 +30,8 @@ warning 6002: The table/view 'gulam786_Huruf.dbo.AppFile' does not have a primar
     <Property Name="IsNotification" Type="bit" />
     <Property Name="FileName" Type="varchar" MaxLength="500" />
   </EntityType>
-  <EntityContainer Name="GmContextModelStoreContainer">
+  <EntityContainer Name="gulam786_HurufModelStoreContainer">
+    <EntitySet Name="AppFile" EntityType="Self.AppFile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRegister" EntityType="Self.UserRegister" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="AppFile" EntityType="Self.AppFile" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [AppFile].[AppFileID] AS [AppFileID], 
-    [AppFile].[Title] AS [Title], 
-    [AppFile].[FileURL] AS [FileURL], 
-    [AppFile].[Description] AS [Description], 
-    [AppFile].[FileType] AS [FileType], 
-    [AppFile].[FileCategory] AS [FileCategory], 
-    [AppFile].[IsDownloaded] AS [IsDownloaded], 
-    [AppFile].[CreatedBy] AS [CreatedBy], 
-    [AppFile].[Timestamp] AS [Timestamp]
-    FROM [dbo].[AppFile] AS [AppFile]</DefiningQuery>
-    </EntitySet>
   </EntityContainer>
 </Schema>

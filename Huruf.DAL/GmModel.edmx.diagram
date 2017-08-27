@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2d130b840f9948e4a9ccb9b69acf066d" Name="Diagram1">
-        <EntityTypeShape EntityType="GmContextModel.UserRegister" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="GmContextModel.AppFile" Width="1.5" PointX="3.375" PointY="0.75" />
+      <Diagram DiagramId="48c76918643f45a58f4c45627c06d647" Name="Diagram1">
+        <EntityTypeShape EntityType="gulam786_HurufModel.AppFile" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gulam786_HurufModel.UserRegister" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

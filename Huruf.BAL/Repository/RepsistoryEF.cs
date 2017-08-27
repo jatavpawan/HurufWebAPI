@@ -7,15 +7,15 @@ using Huruf.DAL;
 
 public class RepsistoryEF<T> : IDisposable where T : class
 {
-    private static GmContext _db;
+    private static gulam786_HurufEntities _db;
 
     public RepsistoryEF()
     {
-        _db = new GmContext();
+        _db = new gulam786_HurufEntities();
     }
     public RepsistoryEF(bool DisableLazyLoading)
     {
-        _db = new GmContext();
+        _db = new gulam786_HurufEntities();
         _db.Configuration.LazyLoadingEnabled = DisableLazyLoading;
     }
 

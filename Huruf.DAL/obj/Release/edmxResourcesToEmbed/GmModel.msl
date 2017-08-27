@@ -1,10 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="GmContextModelStoreContainer" CdmEntityContainer="GmContext">
-    <EntitySetMapping Name="UserRegister">
-      <EntityTypeMapping TypeName="GmContextModel.UserRegister">
+  <EntityContainerMapping StorageEntityContainer="gulam786_HurufModelStoreContainer" CdmEntityContainer="gulam786_HurufEntities">
+    <EntitySetMapping Name="AppFiles">
+      <EntityTypeMapping TypeName="gulam786_HurufModel.AppFile">
+        <MappingFragment StoreEntitySet="AppFile">
+          <ScalarProperty Name="AppFileID" ColumnName="AppFileID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="FileCategory" ColumnName="FileCategory" />
+          <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRegisters">
+      <EntityTypeMapping TypeName="gulam786_HurufModel.UserRegister">
         <MappingFragment StoreEntitySet="UserRegister">
-          <ScalarProperty Name="FileName" ColumnName="FileName" />
           <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -15,21 +29,7 @@
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="GCMId" ColumnName="GCMId" />
           <ScalarProperty Name="IsNotification" ColumnName="IsNotification" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="AppFile">
-      <EntityTypeMapping TypeName="GmContextModel.AppFile">
-        <MappingFragment StoreEntitySet="AppFile">
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
-          <ScalarProperty Name="FileCategory" ColumnName="FileCategory" />
-          <ScalarProperty Name="FileType" ColumnName="FileType" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="AppFileID" ColumnName="AppFileID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

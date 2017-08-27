@@ -225,6 +225,8 @@ namespace HurufAPI.Api
                     ReturnValues ret = null;
                     using (RepsistoryEF<AppFile> _o = new RepsistoryEF<AppFile>())
                     {
+                        obj.IsDownloaded = false;
+                        obj.Timestamp = DateTime.Now;
                         var result = _o.Save(obj);
                         if (result != null)
                         {
@@ -242,6 +244,7 @@ namespace HurufAPI.Api
                                 Source = "0",
                             };
                         }
+                        trans.Complete();
                     }
                     return ret;
                 }
@@ -260,6 +263,39 @@ namespace HurufAPI.Api
                 }
             }
         }
+
+        [HttpGet]
+        [Route("GetFiles")]
+        public List<AppFile> GetFiles(int FileType, int FileCategory)
+        {
+            List<AppFile> files = null;
+            using (TransactionScope trans = new TransactionScope())
+            {
+                try
+                {
+                    if (FileType != 0 && FileCategory != 0)
+                    {
+                        using (RepsistoryEF<AppFile> _o = new RepsistoryEF<AppFile>())
+                        {
+                            files = _o.GetListBySelector(x => x.FileType.Equals(FileType) && x.FileCategory.Equals(FileCategory)).ToList();
+                        }
+                    }
+
+                    trans.Complete();
+                    return files;
+                }
+                catch (Exception ex)
+                {
+                    trans.Dispose();
+                    throw ex;
+                }
+                finally
+                {
+                    trans.Dispose();
+                }
+            }
+        }
+
     }
 }
 
