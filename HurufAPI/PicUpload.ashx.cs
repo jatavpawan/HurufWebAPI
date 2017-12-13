@@ -28,11 +28,11 @@ namespace HurufAPI
                 string tempPath = "";
                 tempPath = "Uploads/ProfilePic";
                 savepath = context.Server.MapPath(tempPath);
-                string filename = Guid.NewGuid() + postedFile.FileName;
+                string filename = Guid.NewGuid() + postedFile.FileName.Replace(" ", "");
                 if (!Directory.Exists(savepath))
                     Directory.CreateDirectory(savepath);
                 Guid objguid = Guid.NewGuid();
-                postedFile.SaveAs(savepath + @"\" + filename.Replace(" ", ""));
+                postedFile.SaveAs(savepath + @"\" + filename);
 
                 context.Response.StatusCode = 200;
                 string[] keys = context.Request.Form.AllKeys;

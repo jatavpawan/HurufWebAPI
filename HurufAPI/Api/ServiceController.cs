@@ -8,6 +8,7 @@ using System.Web.Http;
 using Huruf.BAL;
 using System.Transactions;
 using Huruf.BAL.Repository;
+using System.Collections;
 namespace HurufAPI.Api
 {
     public class ServiceController : ApiController
@@ -212,8 +213,88 @@ namespace HurufAPI.Api
                 }
             }
         }
-        #endregion
 
+        [HttpGet]
+        [Route("GetForgotPassword")]
+        public string GetForgotPassword(string email)
+        {
+            string response = string.Empty;
+            using (TransactionScope trans = new TransactionScope())
+            {
+                try
+                {
+                    if (!string.IsNullOrEmpty(email))
+                    {
+                        using (RepsistoryEF<UserRegister> _o = new RepsistoryEF<UserRegister>())
+                        {
+                            var user = _o.GetListBySelector(x => x.Email.Equals(email)).FirstOrDefault();
+                            if (user != null)
+                            {
+                                reposSendMail objreposSendMail = new reposSendMail();
+                                objreposSendMail.contentBody(user, "ForgetPassword");
+                                response = "Password has been sent successfully";
+                            }
+                            else
+                            {
+                                response = "Email address is not registered.";
+                            }
+                        }
+                    }
+
+                    trans.Complete();
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    trans.Dispose();
+                    throw ex;
+                }
+                finally
+                {
+                    trans.Dispose();
+                }
+            }
+        }
+
+
+        #endregion
+        [HttpGet]
+        [Route("SetFileIsDownloaded")]
+        public string SetFileIsDownloaded(bool flag, int appFileId)
+        {
+            string response = string.Empty;
+            using (TransactionScope trans = new TransactionScope())
+            {
+                try
+                {
+                    if (appFileId != 0)
+                    {
+                        using (RepsistoryEF<AppFile> _o = new RepsistoryEF<AppFile>())
+                        {
+                            var file = _o.GetListBySelector(x => x.AppFileID.Equals(appFileId)).FirstOrDefault();
+                            if (file != null)
+                            {
+                                file.IsDownloaded = flag;
+                                _o.Update(file);
+                                response = "OK";
+                            }
+                        }
+                    }
+
+                    trans.Complete();
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    trans.Dispose();
+                    throw ex;
+                }
+                finally
+                {
+                    trans.Dispose();
+                }
+            }
+        }
         [HttpPost]
         [Route("SaveUserFile")]
         public ReturnValues SaveUserFile(AppFile obj)
@@ -295,7 +376,183 @@ namespace HurufAPI.Api
                 }
             }
         }
+        [HttpPost]
+        [Route("SaveDiscussion")]
+        public ReturnValues SaveDiscussion(Discusssion obj)
+        {
+            using (TransactionScope trans = new TransactionScope())
+            {
+                try
+                {
+                    ReturnValues ret = null;
+                    using (RepsistoryEF<Discusssion> _o = new RepsistoryEF<Discusssion>())
+                    {
 
+                        var result = _o.Save(obj);
+                        if (result != null)
+                        {
+                            ret = new ReturnValues
+                            {
+                                Success = "Posted successfully.",
+                                Source = "0",
+                            };
+                        }
+                        else
+                        {
+                            ret = new ReturnValues
+                            {
+                                Success = "Failed to save",
+                                Source = "0",
+                            };
+                        }
+                        trans.Complete();
+                    }
+                    return ret;
+                }
+                catch (Exception ex)
+                {
+                    trans.Dispose();
+                    ReturnValues objex = new ReturnValues
+                    {
+                        Failure = ex.Message,
+                    };
+                    throw ex;
+                }
+                finally
+                {
+                    trans.Dispose();
+                }
+            }
+        }
+
+        [HttpGet]
+        [Route("GetDiscussions")]
+        public List<DiscussionDetail> GetDiscussions()
+        {
+            using (TransactionScope trans = new TransactionScope())
+            {
+                try
+                {
+                    using (gulam786_HurufEntities _db = new gulam786_HurufEntities())
+                    {
+                        var discussions = (from d in _db.Discusssions
+                                           join u in _db.UserRegisters on d.PostedBy equals u.RegistrationID
+                                           select new DiscussionDetail
+                                           {
+                                               DiscusssionID = d.DiscusssionID,
+                                               Title = d.Title,
+                                               Description = d.Description,
+                                               PostedDate = d.PostedDate,
+                                               FileName = u.FileName,
+                                               FullName=u.FirstName+" "+u.LastName
+                                           }).ToList();
+
+                        trans.Complete();
+                        return discussions;
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    trans.Dispose();
+                    throw ex;
+                }
+                finally
+                {
+                    trans.Dispose();
+                }
+            }
+        }
+
+        [HttpPost]
+        [Route("AddComment")]
+        public ReturnValues AddComment(DiscussionComment obj)
+        {
+            using (TransactionScope trans = new TransactionScope())
+            {
+                try
+                {
+                    ReturnValues ret = null;
+                    using (RepsistoryEF<DiscussionComment> _o = new RepsistoryEF<DiscussionComment>())
+                    {
+
+                        var result = _o.Save(obj);
+                        if (result != null)
+                        {
+                            ret = new ReturnValues
+                            {
+                                Success = "Comment posted successfully.",
+                                Source = "0",
+                            };
+                        }
+                        else
+                        {
+                            ret = new ReturnValues
+                            {
+                                Success = "Failed to save",
+                                Source = "0",
+                            };
+                        }
+                        trans.Complete();
+                    }
+                    return ret;
+                }
+                catch (Exception ex)
+                {
+                    trans.Dispose();
+                    ReturnValues objex = new ReturnValues
+                    {
+                        Failure = ex.Message,
+                    };
+                    throw ex;
+                }
+                finally
+                {
+                    trans.Dispose();
+                }
+            }
+        }
+
+        [HttpGet]
+        [Route("GetComments")]
+        public List<DiscussionDetail> GetComments(int discussionId)
+        {
+            using (TransactionScope trans = new TransactionScope())
+            {
+                try
+                {
+                    using (gulam786_HurufEntities _db = new gulam786_HurufEntities())
+                    {
+                        var discussions = (from d in _db.DiscussionComments
+                                           join u in _db.UserRegisters on d.CommentBy equals u.RegistrationID
+                                           where d.DiscusssionID == discussionId
+                                           select new DiscussionDetail
+                                           {
+                                               DiscusssionID = d.DiscusssionID, 
+                                               Description = d.Comment,
+                                               PostedDate = d.CommentDate,
+                                               FileName = u.FileName,
+                                               FullName = u.FirstName + " " + u.LastName
+                                           }).ToList();
+
+                        trans.Complete();
+                        return discussions;
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    trans.Dispose();
+                    throw ex;
+                }
+                finally
+                {
+                    trans.Dispose();
+                }
+            }
+        }
     }
 }
 

@@ -27,5 +27,7 @@ namespace Huruf.DAL
     
         public virtual DbSet<AppFile> AppFiles { get; set; }
         public virtual DbSet<UserRegister> UserRegisters { get; set; }
+        public virtual DbSet<Discusssion> Discusssions { get; set; }
+        public virtual DbSet<DiscussionComment> DiscussionComments { get; set; }
     }
 }

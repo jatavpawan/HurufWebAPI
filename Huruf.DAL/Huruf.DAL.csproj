@@ -52,6 +52,12 @@
       <DependentUpon>GmModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="DiscussionComment.cs">
+      <DependentUpon>GmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Discusssion.cs">
+      <DependentUpon>GmModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="GmModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

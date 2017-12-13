@@ -59,6 +59,14 @@ namespace Huruf.DAL
         public string GCMId { get; set; }
         public System.DateTime CreateDate { get; set; }
     }
-
+    public class DiscussionDetail
+    {
+        public int DiscusssionID { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public DateTime PostedDate { get; set; }
+        public string FileName { get; set; }
+        public string FullName { get; set; }
+    }
 
 }

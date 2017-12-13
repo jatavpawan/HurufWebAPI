@@ -30,8 +30,30 @@
     <Property Name="IsNotification" Type="bit" />
     <Property Name="FileName" Type="varchar" MaxLength="500" />
   </EntityType>
+  <EntityType Name="DiscussionComment">
+    <Key>
+      <PropertyRef Name="DiscusssionCommentID" />
+    </Key>
+    <Property Name="DiscusssionCommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DiscusssionID" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="CommentDate" Type="datetime" Nullable="false" />
+    <Property Name="CommentBy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Discusssion">
+    <Key>
+      <PropertyRef Name="DiscusssionID" />
+    </Key>
+    <Property Name="DiscusssionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="PostedBy" Type="int" Nullable="false" />
+    <Property Name="PostedDate" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityContainer Name="gulam786_HurufModelStoreContainer">
     <EntitySet Name="AppFile" EntityType="Self.AppFile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRegister" EntityType="Self.UserRegister" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiscussionComment" EntityType="Self.DiscussionComment" Schema="huruf786" store:Type="Tables" />
+    <EntitySet Name="Discusssion" EntityType="Self.Discusssion" Schema="huruf786" store:Type="Tables" />
   </EntityContainer>
 </Schema>

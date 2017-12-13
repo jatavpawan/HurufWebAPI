@@ -90,10 +90,10 @@ namespace Huruf.BAL.Repository
 
                     case "ForgetPassword":
                         StrB += @"<div style='padding:10px;'>Hi " + obj.FirstName + " " + obj.LastName;
-                        StrB += "<br/><br/> Your Password for Smart Service App is below <br/>";
+                        StrB += "<br/><br/> Your Password for Huruf App is below <br/>";
                         StrB += "<h3>" + obj.Password + "<h3/>";
-                        StrB += @"<br/><br/>Best Regards,<br/>Smart Service App. </p></div>";
-                        status= SendEmail("Password Recovery Mail from Smart Service APP", StrB.ToString().Replace("\r", string.Empty).Replace("\n", string.Empty), obj.Email);
+                        StrB += @"<br/><br/>Best Regards,<br/>Huruf App. </p></div>";
+                        status= SendEmail("Password Recovery Mail from Huruf APP", StrB.ToString().Replace("\r", string.Empty).Replace("\n", string.Empty), obj.Email);
                         break;
 
                     case "ChangePassword":
@@ -101,7 +101,7 @@ namespace Huruf.BAL.Repository
                         StrB += "<br/><br/> Your Password has been changed for Smart Service App. <br/> Your new password as below <br/>";
                         StrB += "<h3>" + obj.Password + "<h3/>";
                         StrB += @"<br/><br/>Best Regards,<br/>Smart Service App. </p></div>";
-                        status=SendEmail("New Password for Smart Service APP", StrB.ToString().Replace("\r", string.Empty).Replace("\n", string.Empty), obj.Email);
+                        status=SendEmail("New Password for Huruf APP", StrB.ToString().Replace("\r", string.Empty).Replace("\n", string.Empty), obj.Email);
                         break;
 
 

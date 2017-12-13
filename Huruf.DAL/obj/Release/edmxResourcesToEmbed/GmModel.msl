@@ -33,5 +33,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Discusssions">
+      <EntityTypeMapping TypeName="gulam786_HurufModel.Discusssion">
+        <MappingFragment StoreEntitySet="Discusssion">
+          <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+          <ScalarProperty Name="PostedBy" ColumnName="PostedBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="DiscusssionID" ColumnName="DiscusssionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiscussionComments">
+      <EntityTypeMapping TypeName="gulam786_HurufModel.DiscussionComment">
+        <MappingFragment StoreEntitySet="DiscussionComment">
+          <ScalarProperty Name="CommentBy" ColumnName="CommentBy" />
+          <ScalarProperty Name="CommentDate" ColumnName="CommentDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="DiscusssionID" ColumnName="DiscusssionID" />
+          <ScalarProperty Name="DiscusssionCommentID" ColumnName="DiscusssionCommentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
